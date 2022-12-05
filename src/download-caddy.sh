@@ -1,11 +1,12 @@
 _download_caddy_file() {
 	caddy_tmp="/tmp/install_caddy/"
-	caddy_tmp_file="/tmp/install_caddy/caddy.tar.gz"
+	caddy_tmp_file="/tmp/install_caddy/caddy_2.62_linux_amd64.tar.gz"
 	[[ -d $caddy_tmp ]] && rm -rf $caddy_tmp
 	if [[ $sys_bit == "i386" || $sys_bit == "i686" ]]; then
-		local caddy_download_link="https://caddyserver.com/download/linux/386?license=personal"
+		local caddy_download_link="https://caddyserver.com/api/download?os=linux&arch=amd64"
 	else
-		local caddy_download_link="https://caddyserver.com/download/linux/amd64?license=personal"
+		local caddy_download_link="https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz"
+
 	fi
 
 	mkdir -p $caddy_tmp
